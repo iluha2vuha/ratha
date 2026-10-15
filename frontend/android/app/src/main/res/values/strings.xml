@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ratha</string>
+    <string name="title_activity_main">Ratha</string>
+    <string name="package_name">com.ratha.planner</string>
+    <string name="custom_url_scheme">com.ratha.planner</string>
+</resources>

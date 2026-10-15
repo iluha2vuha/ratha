@@ -1,0 +1,159 @@
+<style>
+  #ratha-design-preview {
+    --ratha-surface: light-dark(#fffdf7, #1b261d);
+    --ratha-ink: light-dark(#18291c, #f3f5ec);
+    --ratha-muted: light-dark(#596457, #b4bdad);
+    --ratha-line: light-dark(#dfe4d8, #3e4d3d);
+    --ratha-fill: light-dark(#f0f2e9, #263228);
+    --ratha-accent: light-dark(#006400, #afd69b);
+    --ratha-brand: #006400;
+    --ratha-brand-on: #ffffff;
+    --ratha-radius: 20px;
+    --ratha-space: 24px;
+  }
+  #ratha-design-preview .ratha-stage { min-height: 610px; padding: 24px 12px; display: flex; justify-content: center; align-items: flex-start; }
+  #ratha-design-preview .ratha-sheet { box-sizing: border-box; width: min(100%, 420px); padding: var(--ratha-space); background: var(--ratha-surface); color: var(--ratha-ink); border: 1px solid var(--ratha-line); border-radius: var(--ratha-radius); font-family: Manrope, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.5; }
+  #ratha-design-preview .ratha-sheet * { box-sizing: border-box; }
+  #ratha-design-preview .ratha-brandline { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; color: var(--ratha-accent); }
+  #ratha-design-preview .ratha-wordmark { font-size: 26px; font-weight: 800; letter-spacing: -.065em; }
+  #ratha-design-preview .ratha-brandline small { margin-left: auto; color: var(--ratha-muted); font-size: 12px; }
+  #ratha-design-preview h2 { margin: 0 0 8px; color: var(--ratha-ink); font-size: 26px; line-height: 1.2; letter-spacing: -.025em; font-weight: 700; }
+  #ratha-design-preview p { margin: 0; }
+  #ratha-design-preview .ratha-subtitle { font-size: 14px; color: var(--ratha-muted); }
+  #ratha-design-preview .ratha-days { display: grid; margin: 24px 0; }
+  #ratha-design-preview button { font: inherit; color: inherit; }
+  #ratha-design-preview .ratha-day { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 8px; width: 100%; padding: 16px 8px; border: 0; border-bottom: 1px solid var(--ratha-line); background: transparent; text-align: left; }
+  #ratha-design-preview .ratha-day[aria-pressed="true"] { background: var(--ratha-fill); }
+  #ratha-design-preview .ratha-daynumber { padding-top: 2px; color: var(--ratha-accent); font-weight: 700; font-size: 14px; }
+  #ratha-design-preview .ratha-day strong { display: block; font-size: 15px; font-weight: 600; }
+  #ratha-design-preview .ratha-day small { display: block; margin-top: 4px; color: var(--ratha-muted); font-size: 13px; }
+  #ratha-design-preview .ratha-primary { display: block; min-height: 48px; width: 100%; padding: 12px; border: 0; border-radius: 12px; background: var(--ratha-brand); color: var(--ratha-brand-on); font-weight: 700; }
+  #ratha-design-preview .ratha-primary:hover { background: #004d00; }
+  #ratha-design-preview .ratha-itinerary { margin: 16px 0 0; padding: 16px 0 0; border-top: 1px solid var(--ratha-line); font-size: 14px; }
+  #ratha-design-preview .ratha-itinerary ol { margin: 8px 0; padding-left: 20px; }
+  #ratha-design-preview .ratha-footnote { margin-top: 16px; color: var(--ratha-muted); font-size: 12px; }
+  #ratha-design-preview .ratha-switcher { display: flex; gap: 8px; padding: 4px; margin: 24px 0; border-radius: 10px; background: var(--ratha-fill); }
+  #ratha-design-preview .ratha-switcher button { flex: 1; min-height: 44px; border: 0; border-radius: 7px; background: transparent; font-weight: 600; }
+  #ratha-design-preview .ratha-switcher button[aria-pressed="true"] { background: var(--ratha-surface); color: var(--ratha-accent); }
+  #ratha-design-preview .ratha-selected { padding: 0 0 24px; }
+  #ratha-design-preview .ratha-selected h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; letter-spacing: -.025em; }
+  #ratha-design-preview .ratha-selected dl { margin: 20px 0; display: flex; flex-wrap: wrap; gap: 24px; }
+  #ratha-design-preview .ratha-selected dt { font-size: 12px; color: var(--ratha-muted); }
+  #ratha-design-preview .ratha-selected dd { margin: 4px 0 0; font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  #ratha-design-preview .ratha-weather { padding-top: 16px; border-top: 1px solid var(--ratha-line); color: var(--ratha-muted); font-size: 14px; display: flex; gap: 8px; align-items: center; }
+  @media (max-width: 420px) { #ratha-design-preview .ratha-stage { min-height: 690px; padding-inline: 0; } }
+</style>
+<div id="ratha-design-preview" class="viz-carousel viz-dotted-background" aria-label="Ratha itinerary designs">
+  <section data-variant="Day list" aria-label="Day list design">
+    <div class="ratha-stage">
+      <section class="ratha-sheet" aria-label="Day list itinerary">
+        <div class="ratha-brandline"><i data-lucide="route" aria-hidden="true"></i><span class="ratha-wordmark">ratha</span><small>Design sample</small></div>
+        <h2>Ossian overnight</h2>
+        <p class="ratha-subtitle">Corrour station to Dalwhinnie · 2 days</p>
+        <div class="ratha-days" role="group" aria-label="Choose a day">
+          <button class="ratha-day cursor-interaction" type="button" data-day="1" aria-pressed="true"><span class="ratha-daynumber">Day 1</span><span><strong>Corrour station to Loch Ossian</strong><small>16 km · 4 hours estimated</small></span></button>
+          <button class="ratha-day cursor-interaction" type="button" data-day="2" aria-pressed="false"><span class="ratha-daynumber">Day 2</span><span><strong>Loch Ossian to Dalwhinnie</strong><small>18 km · 4.5 hours estimated</small></span></button>
+        </div>
+        <button class="ratha-primary cursor-interaction" type="button" data-detail aria-expanded="false" aria-controls="ratha-list-itinerary">View day 1 itinerary</button>
+        <div class="ratha-itinerary" id="ratha-list-itinerary" hidden></div>
+        <p class="ratha-footnote">Illustrative stages and estimates. Not a verified route.</p>
+        <span class="sr-only" data-announcement aria-live="polite"></span>
+      </section>
+    </div>
+  </section>
+  <section data-variant="Selected day" aria-label="Selected day design" hidden>
+    <div class="ratha-stage">
+      <section class="ratha-sheet" aria-label="Selected day itinerary">
+        <div class="ratha-brandline"><i data-lucide="route" aria-hidden="true"></i><span class="ratha-wordmark">ratha</span><small>Design sample</small></div>
+        <h2>Ossian overnight</h2>
+        <p class="ratha-subtitle">Corrour station to Dalwhinnie · 2 days</p>
+        <div class="ratha-switcher" role="group" aria-label="Choose a day">
+          <button class="cursor-interaction" type="button" data-day="1" aria-pressed="true">Day 1</button>
+          <button class="cursor-interaction" type="button" data-day="2" aria-pressed="false">Day 2</button>
+        </div>
+        <div class="ratha-selected" aria-live="polite">
+          <h3 data-endpoints>Corrour station to Loch Ossian</h3>
+          <dl><div><dt>Distance</dt><dd data-distance>16 km</dd></div><div><dt>Walking time</dt><dd data-time>4 hours</dd></div></dl>
+          <p class="ratha-weather"><i data-lucide="cloud" aria-hidden="true"></i>Forecast unavailable</p>
+        </div>
+        <button class="ratha-primary cursor-interaction" type="button" data-detail aria-expanded="false" aria-controls="ratha-selected-itinerary">View day 1 itinerary</button>
+        <div class="ratha-itinerary" id="ratha-selected-itinerary" hidden></div>
+        <p class="ratha-footnote">Illustrative stages and estimates. Not a verified route.</p>
+        <span class="sr-only" data-announcement aria-live="polite"></span>
+      </section>
+    </div>
+  </section>
+</div>
+<script>
+(() => {
+  const root = document.getElementById('ratha-design-preview');
+  const stages = [
+    { start: 'Corrour station', end: 'Loch Ossian', distance: '16 km', time: '4 hours' },
+    { start: 'Loch Ossian', end: 'Dalwhinnie', distance: '18 km', time: '4.5 hours' }
+  ];
+  const saved = window.openai?.widgetState?.privateContent;
+  const states = Array.from(root.querySelectorAll('[data-variant]')).map((variant, index) => ({
+    variant, day: saved?.days?.[index] === 2 ? 2 : 1,
+    expanded: saved?.expanded?.[index] === true
+  }));
+  function render(state) {
+    const stage = stages[state.day - 1];
+    const sheet = state.variant.querySelector('.ratha-sheet');
+    sheet.querySelectorAll('[data-day]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.day) === state.day)));
+    const detail = sheet.querySelector('[data-detail]');
+    detail.textContent = `${state.expanded ? 'Hide' : 'View'} day ${state.day} itinerary`;
+    detail.setAttribute('aria-expanded', String(state.expanded));
+    const itinerary = sheet.querySelector('.ratha-itinerary');
+    itinerary.hidden = !state.expanded;
+    itinerary.replaceChildren();
+    const list = document.createElement('ol');
+    [`Start at ${stage.start}.`, `Follow the imported track to ${stage.end}.`].forEach(text => {
+      const item = document.createElement('li'); item.textContent = text; list.append(item);
+    });
+    itinerary.append(list);
+    const endpoints = sheet.querySelector('[data-endpoints]');
+    if (endpoints) {
+      endpoints.textContent = `${stage.start} to ${stage.end}`;
+      sheet.querySelector('[data-distance]').textContent = stage.distance;
+      sheet.querySelector('[data-time]').textContent = stage.time;
+    }
+  }
+  function save() {
+    const pending = window.openai?.setWidgetState?.({
+      modelContent: { selectedDays: states.map(s => ({ design: s.variant.dataset.variant, day: s.day })) },
+      privateContent: { days: states.map(s => s.day), expanded: states.map(s => s.expanded) }
+    });
+    pending?.catch(() => {});
+  }
+  states.forEach(state => {
+    render(state);
+    state.variant.querySelectorAll('[data-day]').forEach(button => button.addEventListener('click', () => {
+      state.day = Number(button.dataset.day); render(state); save();
+      state.variant.querySelector('[data-announcement]').textContent = `Day ${state.day} selected.`;
+    }));
+    state.variant.querySelector('[data-detail]').addEventListener('click', () => {
+      state.expanded = !state.expanded; render(state); save();
+      state.variant.querySelector('[data-announcement]').textContent = `Day ${state.day} itinerary ${state.expanded ? 'shown' : 'hidden'}.`;
+    });
+  });
+  window.addEventListener('openai:set_globals', event => {
+    const incoming = event.detail?.globals?.widgetState?.privateContent;
+    if (!incoming) return;
+    states.forEach((state, index) => {
+      state.day = incoming.days?.[index] === 2 ? 2 : 1;
+      state.expanded = incoming.expanded?.[index] === true;
+      render(state);
+    });
+  });
+  const design = { radius: 20, padding: 24 };
+  function renderDesign() {
+    root.style.setProperty('--ratha-radius', `${design.radius}px`);
+    root.style.setProperty('--ratha-space', `${design.padding}px`);
+  }
+  if (globalThis.Tweak) {
+    const tweak = new Tweak({ container: root, onChange: renderDesign });
+    tweak.addSlider(design, 'radius', { label: 'Sheet corners', min: 8, max: 24, unit: 'px' });
+    tweak.addSlider(design, 'padding', { label: 'Sheet padding', min: 16, max: 28, unit: 'px' });
+  }
+})();
+</script>

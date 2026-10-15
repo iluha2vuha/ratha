@@ -1,0 +1,22 @@
+# Python
+backend/.venv/
+backend/data/*.sqlite3
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Secrets
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Personal documents and credentials
+*_CV_*.pdf
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
